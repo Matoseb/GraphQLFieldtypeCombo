@@ -1,6 +1,6 @@
 GraphQLFieldtypeCombo
 =========================
-Not tested completely! Feel free to contribute
+Partial support! Not tested completely! Feel free to contribute
 
 This module adds GraphQL support for [FieldtypeCombo](https://processwire.com/store/pro-fields/combo/). It is only intended for 
 use with [ProcessGraphQL](https://github.com/dadish/ProcessGraphQL#processgraphql) module.
