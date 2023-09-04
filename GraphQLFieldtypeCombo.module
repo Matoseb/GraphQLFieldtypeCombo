@@ -18,6 +18,7 @@ class GraphQLFieldtypeCombo extends WireData implements Module {
 			'title' => 'GraphQLFieldtypeCombo',
 			'version' => 1,
 			'summary' => 'GraphQL support for FieldtypeCombo.',
+			'href' => 'https://github.com/Matoseb/GraphQLFieldtypeCombo',
 			'icon' => 'globe',
 			'requires' => ['FieldtypeCombo']
 		];
