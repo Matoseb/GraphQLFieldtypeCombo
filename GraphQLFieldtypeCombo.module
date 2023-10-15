@@ -27,11 +27,15 @@ class GraphQLFieldtypeCombo extends WireData implements Module {
 	public static function getType(Field $field) {
 
 		$subfields = $field->getComboSettings()->getSubfields();
+
+		bd($subfields);
 		
 		$desc = $field->description;
       	if (!$desc) {
         	$desc = "Field with the type of {$field->type}.";
       	}
+
+
 
 		return new ObjectType([
 			'name' => $field->name,
@@ -67,9 +71,15 @@ class GraphQLFieldtypeCombo extends WireData implements Module {
 
   public static function pwSubfieldToGraphqlClass($subfield)
   {
+
+	// replace underscores with empty
+	$type = str_replace('_', '', $subfield->type);
+
     // use local field if available
     $className =
-      "\\ProcessWire\\GraphQL\\Type\\Fieldtype\\Fieldtype" . $subfield->type;
+      "\\ProcessWire\\GraphQL\\Type\\Fieldtype\\Fieldtype" . $type;
+
+
 
     if (class_exists($className)) {
       return $className;
@@ -80,6 +90,16 @@ class GraphQLFieldtypeCombo extends WireData implements Module {
     return null;
   }
 
-  	//TODO input type
+	public static function getInputType(Field $field)
+	{
+
+	$subfields = $field->getComboSettings()->getSubfields();
+
+	return new InputObjectType([
+		'name' => 'ComboInput',
+		'fields' => self::getFields($subfields),
+	]);
+	}
+
 	//TODO set value type
 }
