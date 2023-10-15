@@ -28,7 +28,7 @@ class GraphQLFieldtypeCombo extends WireData implements Module {
 
 		$subfields = $field->getComboSettings()->getSubfields();
 
-		bd($subfields);
+		// bd($subfields);
 		
 		$desc = $field->description;
       	if (!$desc) {
