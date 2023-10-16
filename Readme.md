@@ -15,5 +15,5 @@ Everything works behind the scenes for this module. After you installed it, Fiel
 ### TODO
 - [ ] check permissions for subfields
 - [ ] third party field support
-- [x] input type method
+- [ ] file support
 - [ ] set value type method
