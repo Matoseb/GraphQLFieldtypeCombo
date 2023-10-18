@@ -2,7 +2,7 @@
 
 use ProcessWire\GraphQL\Type\Fieldtype\FieldtypeURL;
 
-class FieldtypeURLLanguage extends FieldtypeURL
+class FieldtypeComboURLLanguage extends FieldtypeURL
 { 
 
 }
