@@ -127,7 +127,6 @@ class FieldtypeCombo
       }
 
       $fields[] = $fieldSettings;
-      // bd($fieldSettings);
     }
 
 
@@ -141,6 +140,15 @@ class FieldtypeCombo
 	  $type = Utils::normalizeTypeName($subfield->type);
 
     // use local field if available
+    $className =
+      "\\ProcessWire\\GraphQL\\Type\\Fieldtype\\FieldtypeCombo" . $type;
+    
+    if (class_exists($className)) {
+      
+      return $className;
+    }
+
+
     $className =
       "\\ProcessWire\\GraphQL\\Type\\Fieldtype\\Fieldtype" . $type;
 
